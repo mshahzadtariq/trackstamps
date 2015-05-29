@@ -11,46 +11,50 @@ This gem depends on devise gem and uses devise 'current_user' helper method.
 Simply add trackstamps gem to your Gemfile.
 
     gem 'trackstamps', git: 'https://github.com/mshahzadtariq/trackstamps'
-    
+
 Install bundler gems
-    
+
     bundle install
-    
+
+Install trackstamps
+
+    rails generate trackstamps:install
+
 Generate migration on required model's table
-    
+
     rails generate trackstamps:migration table_name
-    
+
 i.e. if you need to track changes on Account model, you need to do this
-    
+
     rails generate trackstamps:migration accounts
-    
+
 Include trackstamps module inside your model class
-    
+
     class Account
         include Trackstamps
-        
+
         .....
-        
+
     end
-        
+
 Execute migrations
 
     rake db:migrate
-    
+
 And now you are ready to track changes
-    
-    
+
+
 == Usage
-    
+
 It will automatically track record is created or updated by which user. i.e.
-    
+
     Account.last.creator
-    
+
 will return last account was created by which user. Similarily
-    
+
     Account.find(8).updater
-    
+
 will tells us which user updated account with id 8
-    
-    
+
+
 
