@@ -8,6 +8,12 @@ class Trackstamps::MigrationGenerator < ::Rails::Generators::Base
 
   def install
     gsub_file('migration.rb', ':table', table)
+    path = File.join('app', 'models', table.singularize)
+    insert_into_file(path, after: "ActiveRecord::Base\n") do
+      <<-Ruby
+  include Trackstamps
+      Ruby
+    end
     migration_template 'migration.rb', "db/migrate/add_trackstamps_to_#{table}.rb"
   end
 
