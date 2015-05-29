@@ -1,7 +1,7 @@
 module Trackstamps
   module Generators
     class InstallGenerator < Rails::Generators::Base
-      desc "Add MultiTenant functionality to OpenSourceBilling"
+      desc "Add Trackstamps functionality to Rails based web applications"
       source_root File.expand_path("../templates", __FILE__)
 
 
