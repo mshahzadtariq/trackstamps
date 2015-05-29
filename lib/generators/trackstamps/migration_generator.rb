@@ -17,8 +17,10 @@ class Trackstamps::MigrationGenerator < ::Rails::Generators::Base
   end
 
   def migration_data
-    add_column table.to_sym, :created_by, :integer
-    add_column table.to_sym, :updated_by, :integer
+    <<-RUBY
+    add_column "#{table}".to_sym, :created_by, :integer
+    add_column "#{table}".to_sym, :updated_by, :integer
+    RUBY
   end
 
   def self.next_migration_number(dirname)
