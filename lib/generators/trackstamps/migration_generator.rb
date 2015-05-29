@@ -18,8 +18,8 @@ class Trackstamps::MigrationGenerator < ::Rails::Generators::Base
 
   def migration_data
     <<-RUBY
-    add_column "#{table}".to_sym, :created_by, :integer
-    add_column "#{table}".to_sym, :updated_by, :integer
+    add_column :#{table}, :created_by, :integer
+    add_column :#{table}, :updated_by, :integer
     RUBY
   end
 
