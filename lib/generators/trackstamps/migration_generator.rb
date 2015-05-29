@@ -23,6 +23,10 @@ class Trackstamps::MigrationGenerator < ::Rails::Generators::Base
     RUBY
   end
 
+  def table_name
+    table
+  end
+
   def self.next_migration_number(dirname)
     ActiveRecord::Generators::Base.next_migration_number(dirname)
   end
