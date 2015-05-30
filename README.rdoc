@@ -56,5 +56,9 @@ will return last account was created by which user. Similarily
 
 will tells us which user updated account with id 8
 
+== TODO
+
+Autodiscover devise model class
+Mongoid ORM support
 
 
