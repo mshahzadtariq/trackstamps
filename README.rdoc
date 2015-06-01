@@ -10,7 +10,7 @@ This gem depends on devise gem and uses devise 'current_user' helper method.
 
 Simply add trackstamps gem to your Gemfile.
 
-    gem 'trackstamps', git: 'https://github.com/mshahzadtariq/trackstamps'
+    gem 'trackstamps'
 
 Install bundler gems
 
