@@ -30,7 +30,7 @@ i.e. if you need to track changes on Account model, you need to do this
 
 It will automatically include trackstamps module inside your model class
 
-    class Account
+    class Account < ActiveRecord::Base
         include Trackstamps
 
         .....
