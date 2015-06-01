@@ -28,9 +28,9 @@ i.e. if you need to track changes on Account model, you need to do this
 
     rails generate trackstamps:migration accounts
 
-Include trackstamps module inside your model class
+It will automatically include trackstamps module inside your model class
 
-    class Account
+    class Account < ActiveRecord::Base
         include Trackstamps
 
         .....
@@ -56,5 +56,9 @@ will return last account was created by which user. Similarily
 
 will tells us which user updated account with id 8
 
+== TODO
+
+* Autodiscover devise model class
+* Mongoid ORM support
 
 
