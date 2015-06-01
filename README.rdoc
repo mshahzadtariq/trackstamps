@@ -61,7 +61,7 @@ will tells us which user updated account with id 8
 * Autodiscover devise model class
 * Mongoid ORM support
 
-## Contributing
+== Contributing
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
