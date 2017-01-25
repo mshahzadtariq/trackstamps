@@ -12,6 +12,9 @@ module Trackstamps
             before_filter :set_trackstamps_user
             def set_trackstamps_user
               Thread.current[:current_user] = current_user
+            ensure
+              # to address the thread variable leak issues in Puma/Thin webserver
+              Thread.current[:current_user] = nil
             end
           RUBY
         end

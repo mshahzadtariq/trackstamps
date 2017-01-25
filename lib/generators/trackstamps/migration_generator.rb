@@ -8,7 +8,7 @@ class Trackstamps::MigrationGenerator < ::Rails::Generators::Base
 
   def install
     path = File.join('app', 'models', "#{table.singularize}.rb")
-    insert_into_file(path, after: "ActiveRecord::Base\n") do
+    insert_into_file(path, after: "ApplicationRecord\n") do
       <<-Ruby
   include Trackstamps
       Ruby
