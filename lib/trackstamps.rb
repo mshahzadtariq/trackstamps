@@ -3,27 +3,11 @@ module Trackstamps
 
   included do
 
-    #field :updated_by
-    #field :created_by
-
     before_save :set_updater
     before_create :set_creator
 
-    define_method :updater do
-      User.find self.send(:updated_by)
-    end
-
-    define_method :creator do
-      User.find self.send(:created_by)
-    end
-
-    define_method "#{:updater}=" do |user|
-      self.send("#{:updated_by}=", user.id)
-    end
-
-    define_method "#{:creator}=" do |user|
-      self.send("#{:created_by}=", user.id)
-    end
+    belongs_to :updater, class_name: "User", foreign_key: "updated_by"
+    belongs_to :creator, class_name: "User", foreign_key: "created_by"
 
     protected
 
